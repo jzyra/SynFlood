@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
 		//Check mandatory parameters
 		if (iface != NULL && destination != NULL) {
 			SynFlood launch(iface, destination, port, verbose);
-			//Run MITM attack
+			//Run DOS attack
 			launch.run();
 		} else {
 			printUsage(argv[0]);
