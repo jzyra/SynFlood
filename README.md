@@ -16,7 +16,7 @@ And make :
 
 You must run this tool with root's privileges.
 
-    synflood -i INTERFACE -t TARGET -d HOST
+    synflood -i INTERFACE -t TARGET -p PORT
     -i : Network interface (example: eth0)
     -t : Target's IP address
     -p : Target's TCP port
