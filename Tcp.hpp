@@ -36,6 +36,11 @@ class Tcp : public Ip {
 	 */
 	Tcp(pcap_t *device);
 	/*!
+	 * \brief Tcp Destructor.
+	 Tcp class's Destructor.
+	 */
+	~Tcp();
+	/*!
 	 * \brief Function for send packet.
 	 * \return Status (if trame is sended or not).
 	 */

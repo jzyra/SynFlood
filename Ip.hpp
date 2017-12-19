@@ -22,6 +22,11 @@ class Ip : public Ethernet {
 	 */
 	Ip(pcap_t *device);
 	/*!
+	 * \brief Ip Destructor.
+	 Ip class's destructor.
+	 */
+	~Ip();
+	/*!
 	 * \brief Function for send packet.
 	 * \return Status (if trame is sended or not).
 	 */

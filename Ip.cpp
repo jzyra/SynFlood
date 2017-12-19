@@ -27,6 +27,10 @@ Ip::Ip(pcap_t *device) : Ethernet(device) {
 	_ethernet->ether_type = 0x008;
 }
 
+Ip::~Ip() {
+	delete _ip;
+}
+
 void Ip::setSaddr(u_int32_t ip) {
 	_ip->saddr = ip;
 }

@@ -73,6 +73,7 @@ void SynFlood::run() {
 				cerr << "[-] Error for send packet." << endl;
 			}
 		}
+		delete targetMac;
 	} else {
 		cerr << "[-] Error: Can't find target's MAC address." << endl;
 		exit(1);

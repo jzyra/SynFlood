@@ -34,6 +34,11 @@ Tcp::Tcp(pcap_t *device) : Ip(device) {
 	_ip->tot_len = htons(40);
 }
 
+Tcp::~Tcp() {
+	delete _tcp;
+	delete _tcph;
+}
+
 void Tcp::setSource(int port) {
 	_tcp->source = htons(port);
 }
